@@ -1,0 +1,22 @@
+# Build and test binaries
+bin/
+
+# Version control
+.git/
+.gitignore
+
+# CI/CD
+.github/
+
+# Documentation
+*.md
+LICENSE
+cliff.toml
+
+# IDE
+.vscode/
+.idea/
+
+# Test files
+*_test.go
+cover.out

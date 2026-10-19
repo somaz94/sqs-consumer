@@ -1,0 +1,46 @@
+version: "2"
+
+run:
+  timeout: 5m
+  allow-parallel-runners: true
+
+linters:
+  default: none
+  enable:
+    - dupl
+    - errcheck
+    - copyloopvar
+    - goconst
+    - gocyclo
+    - govet
+    - ineffassign
+    - lll
+    - misspell
+    - nakedret
+    - prealloc
+    - revive
+    - staticcheck
+    - unconvert
+    - unparam
+    - unused
+  exclusions:
+    generated: lax
+    rules:
+      - path: "internal/*"
+        linters:
+          - dupl
+          - lll
+      - path: "_test\\.go"
+        linters:
+          - dupl
+          - goconst
+          - lll
+  settings:
+    revive:
+      rules:
+        - name: comment-spacings
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
